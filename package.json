@@ -1,0 +1,40 @@
+{
+    "name": "mcp-web-search",
+    "version": "1.0.0",
+    "description": "A powerful Model Context Protocol (MCP) server for web searching using Puppeteer and SQLite. No API keys required!",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "NODE_ENV=development node index.js",
+        "test": "node -c index.js"
+    },
+    "keywords": [
+        "mcp",
+        "model-context-protocol",
+        "web-search",
+        "puppeteer",
+        "sqlite",
+        "scraping",
+        "search-engine",
+        "ai-tools"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/mcp-web-search.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yourusername/mcp-web-search/issues"
+    },
+    "homepage": "https://github.com/yourusername/mcp-web-search#readme",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.17.3",
+        "puppeteer": "^24.16.2",
+        "sqlite3": "^5.1.7"
+    }
+}
