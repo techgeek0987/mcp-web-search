@@ -8,6 +8,8 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import puppeteer from 'puppeteer';
 import sqlite3 from 'sqlite3';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 class WebSearchServer {
   constructor() {
@@ -28,7 +30,12 @@ class WebSearchServer {
 
   async setupDatabase() {
     return new Promise((resolve, reject) => {
-      this.db = new sqlite3.Database('./search_cache.db', (err) => {
+      // Store cache in the web-search server directory instead of current working directory
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = path.dirname(__filename);
+      const dbPath = path.join(__dirname, 'search_cache.db');
+      
+      this.db = new sqlite3.Database(dbPath, (err) => {
         if (err) {
           console.error('Database connection error:', err);
           reject(err);
